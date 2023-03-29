@@ -27,6 +27,8 @@ int main(int argc, char* argv[]) {
 	if (argc > 1 + 1) {
 		if (strlen(argv[1 + 1]) > 1) {
 			err("Length of minor version too long");
+
+			return 1;
 		}
 
 		min = atoi(argv[2]);
@@ -36,6 +38,8 @@ int main(int argc, char* argv[]) {
 	if (argc > 1 + 1 + 1) {
 		if (strlen(argv[1 + 1 + 1]) > 1) {
 			err("Length of patch version too long");
+
+			return 1;
 		}
 
 		patch = atoi(argv[3]);
