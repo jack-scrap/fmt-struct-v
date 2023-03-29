@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 
+const char sep = '.';
+
 void err(char* msg) {
 	printf("Error: %s\n", msg);
 }
@@ -31,6 +33,8 @@ int main(int argc, char* argv[]) {
 	if (strlen(patch) > 1) {
 		err("Length of patch version too long");
 	}
+
+	printf("%s%c%c%c%c\n", maj, sep, min[0], sep, patch[0]);
 
 	return 0;
 }
