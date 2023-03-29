@@ -31,7 +31,15 @@ int main(int argc, char* argv[]) {
 			return 1;
 		}
 
-		min = atoi(argv[2]);
+		int no = atoi(argv[2]);
+
+		if (no < 0) {
+			err("Minor version negative");
+
+			return 1;
+		}
+
+		min = no;
 	}
 
 	int patch = 0;
@@ -42,7 +50,15 @@ int main(int argc, char* argv[]) {
 			return 1;
 		}
 
-		patch = atoi(argv[3]);
+		int no = atoi(argv[3]);
+
+		if (no < 0) {
+			err("Minor version negative");
+
+			return 1;
+		}
+
+		patch = no;
 	}
 
 	printf("%d%c%d%c%d\n", maj, sep, min, sep, patch);
