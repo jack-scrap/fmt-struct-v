@@ -21,7 +21,17 @@ int main(int argc, char* argv[]) {
 		return 1;
 	}
 
-	int maj = atoi(argv[1]);
+	int maj;
+
+	int no = atoi(argv[1]);
+
+	if (no < 0) {
+		err("Major version negative");
+
+		return 1;
+	}
+
+	maj = no;
 
 	int min = 0;
 	if (argc > 1 + 1) {
