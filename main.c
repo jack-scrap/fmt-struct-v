@@ -41,7 +41,7 @@ int main(int argc, char* argv[]) {
 			return 1;
 		}
 
-		int no = atoi(argv[2]);
+		int no = atoi(argv[1 + 1]);
 
 		if (no < 0) {
 			err("Minor version negative");
@@ -60,7 +60,7 @@ int main(int argc, char* argv[]) {
 			return 1;
 		}
 
-		int no = atoi(argv[3]);
+		int no = atoi(argv[1 + 1 + 1]);
 
 		if (no < 0) {
 			err("Minor version negative");
