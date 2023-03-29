@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 const char sep = '.';
 
@@ -20,27 +21,27 @@ int main(int argc, char* argv[]) {
 		return 1;
 	}
 
-	char* maj = argv[1];
+	int maj = atoi(argv[1]);
 
-	char* min = "0";
+	int min = 0;
 	if (argc > 1 + 1) {
-		min = argv[2];
+		if (strlen(argv[1 + 1]) > 1) {
+			err("Length of minor version too long");
+		}
+
+		min = atoi(argv[2]);
 	}
 
-	if (strlen(min) > 1) {
-		err("Length of minor version too long");
-	}
-
-	char* patch = "0";
+	int patch = 0;
 	if (argc > 1 + 1 + 1) {
-		patch = argv[2];
+		if (strlen(argv[1 + 1 + 1]) > 1) {
+			err("Length of patch version too long");
+		}
+
+		patch = atoi(argv[3]);
 	}
 
-	if (strlen(patch) > 1) {
-		err("Length of patch version too long");
-	}
-
-	printf("%s%c%c%c%c\n", maj, sep, min[0], sep, patch[0]);
+	printf("%d%c%d%c%d\n", maj, sep, min, sep, patch);
 
 	return 0;
 }
