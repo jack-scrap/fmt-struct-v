@@ -71,7 +71,7 @@ int main(int argc, char* argv[]) {
 		patch = no;
 	}
 
-	printf("%d%c%d%c%d\n", maj, sep, min, sep, patch);
+	printf("%d%c%d%c%d", maj, sep, min, sep, patch);
 
 	return 0;
 }
